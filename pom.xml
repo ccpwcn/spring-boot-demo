@@ -14,6 +14,12 @@
   <url>http://maven.apache.org/</url>
   <inceptionYear>2001</inceptionYear>
 
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <version>2.2.6.RELEASE</version>
+  </parent>
+
   <distributionManagement>
     <site>
       <id>website</id>
@@ -23,6 +29,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
   </properties>
 
   <build>
