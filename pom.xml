@@ -31,6 +31,11 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <slf4j.version>1.7.30</slf4j.version>
+    <logback.version>1.2.3</logback.version>
+    <mysql.java.version>8.0.21</mysql.java.version>
+    <mybatis.plus.version>3.3.2</mybatis.plus.version>
+    <alibaba.fastjson.version>1.2.72</alibaba.fastjson.version>
   </properties>
 
   <build>
