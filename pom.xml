@@ -35,8 +35,47 @@
     <logback.version>1.2.3</logback.version>
     <mysql.java.version>8.0.21</mysql.java.version>
     <mybatis.plus.version>3.3.2</mybatis.plus.version>
+    <druid.version>1.1.23</druid.version>
     <alibaba.fastjson.version>1.2.72</alibaba.fastjson.version>
   </properties>
+
+  <dependencyManagement>
+
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.10</version>
+      </dependency>
+      <!-- SpringBoot 2.2.6 -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- SpringCloud Hoxton SR6 -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Hoxton SR6</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- 数据库相关 -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.19</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
