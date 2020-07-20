@@ -7,6 +7,9 @@
   <groupId>cn.srwasu</groupId>
   <artifactId>spring-boot-demo</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>commons</module>
+  </modules>
   <!-- 设定为父工程，统一管理所有子模块/项目的依赖项 -->
   <packaging>pom</packaging>
 
@@ -42,6 +45,7 @@
     <alibaba.fastjson.version>1.2.72</alibaba.fastjson.version>
   </properties>
 
+  <!-- 依赖管理节点dependencyManagement只起声明作用，不会直接导入，具体的引用在子项目中使用dependency生效 -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -69,7 +73,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Hoxton SR6</version>
+        <version>Hoxton.SR6</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -92,6 +96,14 @@
         <groupId>com.alibaba</groupId>
         <artifactId>druid-spring-boot-starter</artifactId>
         <version>${druid.version}</version>
+      </dependency>
+      <!-- 其他附加配置 -->
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>provided</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
