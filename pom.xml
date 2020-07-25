@@ -14,7 +14,7 @@
   <!-- 设定为父工程，统一管理所有子模块/项目的依赖项 -->
   <packaging>pom</packaging>
 
-  <name>Maven</name>
+  <name>spring-boot-demo-parent</name>
   <!-- FIXME change it to the project's website -->
   <url>http://maven.apache.org/</url>
   <inceptionYear>2001</inceptionYear>
