@@ -40,9 +40,10 @@
     <junit.version>4.12</junit.version>
     <slf4j.version>1.7.30</slf4j.version>
     <mysql.java.version>8.0.21</mysql.java.version>
-    <mybatis.spring.boot.version>3.3.2</mybatis.spring.boot.version>
+    <mybatis.plus.version>3.3.2</mybatis.plus.version>
     <druid.version>1.1.23</druid.version>
     <alibaba.fastjson.version>1.2.72</alibaba.fastjson.version>
+    <jedis.version>3.2.0</jedis.version>
   </properties>
 
   <!-- 依赖管理节点dependencyManagement只起声明作用，不会直接导入，具体的引用在子项目中使用dependency生效 -->
