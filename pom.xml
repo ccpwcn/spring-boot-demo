@@ -32,6 +32,7 @@
     </site>
   </distributionManagement>
 
+  <!-- 全局统一管理依赖版本，子module只需要引用声明即可，无特殊情况不必再配版本 -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
