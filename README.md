@@ -20,3 +20,6 @@
 
 # 5. 引用说明
 修改一下依赖计划，打算使用MyBatis Plus，而不是MyBatis，前者使用方便很多。
+
+# 6. 启动项目
+请在IDE的运行配置中，或者命令行上激活SpringBoot的配置，如：`-spring.profiles.active=dev`。
