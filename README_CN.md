@@ -9,4 +9,8 @@
 ## @EnableAutoConfiguration
 这个注解是用来帮助我们实现自动装配的。
 
-怎么实现自动装配呢？SpringBoot项目在启动的时候，会执行一个名叫`SpringFactoriesLoader`的类，这个类有一个静态成员，叫
+怎么实现自动装配呢？
+- SpringBoot项目在启动的时候，会执行一个名叫`SpringFactoriesLoader`的类，这个类有一个静态成员，叫`org.springframework.core.io.support.SpringFactoriesLoader.FACTORIES_RESOURCE_LOCATION`，复制它的值`META-INF/spring.factories`
+- 在IDEA中双击SHIFT键，选择All，就会找到项目所依赖的spring-boot-autoconfigure-2.2.6.RELEASE-sources.jar中找到一个META-INF/spring.factories的文本文件
+- 在这个文本文件中，就会有很多很多自动装配的类，其中有一个名叫`org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration`的自动装配类
+- 按住CTRL键点击这个类名，就会跟踪进入这个类的声明定义的位置
