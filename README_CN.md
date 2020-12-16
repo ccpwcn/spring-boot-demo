@@ -14,3 +14,6 @@
 - 在IDEA中双击SHIFT键，选择All，就会找到项目所依赖的spring-boot-autoconfigure-2.2.6.RELEASE-sources.jar中找到一个META-INF/spring.factories的文本文件
 - 在这个文本文件中，就会有很多很多自动装配的类，其中有一个名叫`org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration`的自动装配类
 - 按住CTRL键点击这个类名，就会跟踪进入这个类的声明定义的位置
+- 在这个类的声明位置，可以看到一个名为`org.springframework.boot.autoconfigure.AutoConfigureAfter`的注解，它明确的指定了要在自动装配的时候加载和装配`org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration`
+- 而被指明的这个`org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration`就是用来初始化Spring项目的DispatcherServlet的，熟悉Spring的我们都知道，这是Spring Web项目的核心
+
