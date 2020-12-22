@@ -4,6 +4,8 @@
 
 很熟悉Spring、SpringMVC的情况下，再研究SpringBoot，事半功倍。
 
+很厉害很厉害的人曾经讲过，选择大于努力，所以我们要选择SpringBoot而不是SpringMVC，要选择SpringBoot2.x而不是SpringBoot1.x，另外，MyBatisPlus还是很好用的，可以省去很多麻烦，MyBatisCodeHelper也是极品好物，省下来的时间都是自己的，就不要计较一年59块钱了，你随随便便吃个好点的都不止这个钱，何必要跟自己过不去呢？
+
 # SpringBoot注解
 ## @SpringBootConfiguration
 这个注解其实就是Spring的Configuration注解，这也从另外一个方面解答了为什么SpringBoot的启动类上可以使用方法将一些Bean注入到Spring容器中去，因为启动类本身就在Spring容器中啊。
