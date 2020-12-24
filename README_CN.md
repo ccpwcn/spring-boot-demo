@@ -27,3 +27,10 @@
 - 在这个类的声明位置，可以看到一个名为`org.springframework.boot.autoconfigure.AutoConfigureAfter`的注解，它明确的指定了要在自动装配的时候加载和装配`org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration`
 - 而被指明的这个`org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration`就是用来初始化Spring项目的DispatcherServlet的，熟悉Spring的我们都知道，这是Spring Web项目的核心
 
+**怎么实现自动装配的排除呢？**
+提出这个需求的初衷是什么呢？答案是：虽然SpringBoot的自动装配机制很好，帮助我们省去了很多麻烦事，但是凡事无绝对，有的时候，我们就还真的不需要它的自动装配机制。
+比如说：Spring框架自带的Quartz（定时任务），我就不想让它自动装配，而是想要使用我自己写的，此时，也很简单，只需要在Main入口类的`@SpringBootApplication`注解上添加`exclude`值就可以了，如下所示：
+```java
+@SpringBootApplication(exclude = QuartzAutoConfiguration.class);
+```
+
