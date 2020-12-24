@@ -34,3 +34,10 @@
 @SpringBootApplication(exclude = QuartzAutoConfiguration.class);
 ```
 
+## @ComponentScan
+这个注解其实大家应该是比较熟悉的，它和SpringMVC时代的配置文件中指定要扫描的包的那个xml配置是同一个东西，看下面这个：
+```xml
+<context:component-scan base-package="com.example.package.name" />
+```
+需要注意的是：默认情况下，SpringBoot会扫描main方法所在类（也就是程序入口启动类）的包，所以，通常情况下我们都是将其他的controller、service、dao等包放到启动类所在包的子包中，就能自动扫描了，所以不需要配置这个ComponentScan。
+
