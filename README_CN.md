@@ -41,3 +41,15 @@
 ```
 需要注意的是：默认情况下，SpringBoot会扫描main方法所在类（也就是程序入口启动类）的包，所以，通常情况下我们都是将其他的controller、service、dao等包放到启动类所在包的子包中，就能自动扫描了，所以不需要配置这个ComponentScan。
 
+# SpringBoot的配置文件
+SpringBoot的配置文件，支持传统的properties和新的yaml两种格式，使用更简洁方便的是yaml，所以我们在这里也介绍它。
+
+使用配置文件只需要注意两个点即可，很简单的：
+1. 配置文件的格式要写正确，这个只需要细心就可以了
+2. 配置文件可以区分环境，这里有几个诀窍介绍给大家：
+    1. 默认的配置文件application.yml中，一般不会写具体的配置，只会指明要激活的配置
+    2. 使用application-dev.yml、application-test.yml、application-demo.yml、application-pro.yml等形式区分开发环境、测试环境、演示环境、生产环境等等。
+    3. 激活配置文件时，在IDE中指定运行配载即可，在服务器上运行jar包时使用类似于这样的命令行参数`--spring.profiles.active=dev`即可激活指定的配置文件。
+    4. 当我们已经把jar包打好了之后，不改代码的情况下，又想修改配置文件中的内容，比如数据库连接密码，此时不必修改配置文件再重新打包，只需要把新的配置项放到一个和原来文件名一样的新文件中，再将这个新文件和jar包到一起，再重新启动jar包即可覆盖jar包中resources目录下的配置。
+
+
