@@ -78,5 +78,43 @@ SpringBoot的配置文件，支持传统的properties和新的yaml两种格式�
     4. 当我们已经把jar包打好了之后，不改代码的情况下，又想修改配置文件中的内容，比如数据库连接密码，此时不必修改配置文件再重新打包，只需要把新的配置项放到一个和原来文件名一样的新文件中，再将这个新文件和jar包到一起，再重新启动jar包即可覆盖jar包中resources目录下的配置。
 
 # 绑定和加载自定义的配置文件项
-这一块的功能是很常用的，即将给大家推出最简攻略和最佳实践。
+这一块的功能是很常用的，通常我们都会将一些灵活的业务策略放在配置文件中，然后在代码中加载使用，在这里给大家推出最简攻略和最佳实践。
+
+## 第一步：将要配置的项放在resources目录中的yml文件中：
+```yaml
+password:
+  salt-type: TIMESTAMP
+  min-len: 6
+  max-len: 30
+```
+## 第二步：定义一个类，如下所示：
+```java
+@Configuration
+@ConfigurationProperties("password")
+public class PasswordConf {
+    private String saltType;
+    private int minLen;
+    private int maxLen;
+
+    // 在这里放getters和setters，不能省略
+}
+```
+第三步：在其他地方使用，如下示例：
+```java
+@RestController
+@RequestMapping("/test")
+public class TestController {
+    @Autowired
+    private PasswordConf passwordConf;
+
+    @GetMapping("/password")
+    public String password() {
+        return passwordConf.getSaltType();
+    }
+}
+```
+
+简单！完美！
+
+上述示例代码在本仓库中的user-service模块中有。
 
