@@ -114,7 +114,7 @@ public class TestController {
 }
 ```
 
-简单！完美！
+**简单！完美！**
 
 上述示例代码在本仓库中的user-service模块中有。
 
