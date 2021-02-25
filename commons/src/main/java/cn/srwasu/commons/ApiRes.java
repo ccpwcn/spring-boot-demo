@@ -13,7 +13,24 @@ import java.io.Serializable;
 public class ApiRes<T> implements Serializable {
     private static final long serialVersionUID = 1023920394L;
 
-    private Integer code;
+    private int code;
     private String msg;
     private T res;
+
+    private ApiRes() {
+        this(200, "ok");
+    }
+
+    private ApiRes(int code, String msg) {
+        this(code, msg, null);
+    }
+    private ApiRes(int code, String msg, T res) {
+        this.code = code;
+        this.msg = msg;
+        this.res = res;
+    }
+
+    public static <T> ApiRes<T> ok() {
+        return new ApiRes<>();
+    }
 }
