@@ -31,10 +31,22 @@ public class ApiRes<T> implements Serializable {
     }
 
     public static <T> ApiRes<T> ok() {
-        return ok(null);
+        return ok(200, "ok", null);
     }
 
     public static <T> ApiRes<T> ok(T t) {
-        return new ApiRes<>(200, "ok", t);
+        return ok(200, "ok", t);
+    }
+
+    public static <T> ApiRes<T> ok(int code, String msg) {
+        return ok(code, msg, null);
+    }
+
+    public static <T> ApiRes<T> ok(int code, String msg, T res) {
+        return new ApiRes<>(code, msg, res);
+    }
+
+    public static <T> ApiRes<T> fail(int code, String msg) {
+        return new ApiRes<>(code, msg);
     }
 }
