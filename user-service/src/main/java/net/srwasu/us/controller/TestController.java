@@ -1,6 +1,5 @@
 package net.srwasu.us.controller;
 
-import com.alibaba.fastjson.JSON;
 import net.srwasu.us.properties.PasswordConf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

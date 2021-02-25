@@ -25,13 +25,6 @@
     <version>2.2.6.RELEASE</version>
   </parent>
 
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <url>scp://webhost.company.com/www/website</url>
-    </site>
-  </distributionManagement>
-
   <!-- 全局统一管理依赖版本，子module只需要引用声明即可，无特殊情况不必再配版本 -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -135,12 +128,6 @@
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
         <version>${alibaba.fastjson.version}</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.activiti/activiti-spring-boot-starter-basic -->
-      <dependency>
-        <groupId>org.activiti</groupId>
-        <artifactId>activiti-spring-boot-starter-basic</artifactId>
-        <version>${activiti.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
