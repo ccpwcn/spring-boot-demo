@@ -1,9 +1,7 @@
 package cn.srwasu.commons;
 
-import lombok.extern.slf4j.Slf4j;
+import cn.srwasu.commons.utils.Md4;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

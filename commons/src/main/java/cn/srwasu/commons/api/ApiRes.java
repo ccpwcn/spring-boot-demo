@@ -1,4 +1,4 @@
-package cn.srwasu.commons;
+package cn.srwasu.commons.api;
 
 import lombok.Data;
 
@@ -31,6 +31,10 @@ public class ApiRes<T> implements Serializable {
     }
 
     public static <T> ApiRes<T> ok() {
-        return new ApiRes<>();
+        return ok(null);
+    }
+
+    public static <T> ApiRes<T> ok(T t) {
+        return new ApiRes<>(200, "ok", t);
     }
 }

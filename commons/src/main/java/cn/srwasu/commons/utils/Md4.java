@@ -1,4 +1,4 @@
-package cn.srwasu.commons;
+package cn.srwasu.commons.utils;
 
 import java.nio.charset.StandardCharsets;
 
