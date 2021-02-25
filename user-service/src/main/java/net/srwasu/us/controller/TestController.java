@@ -28,6 +28,6 @@ public class TestController {
 
     @GetMapping("/query")
     public ApiRes<String> query(String keyword) {
-        return ApiRes.ok(queryService.query(keyword));
+        return queryService.query(keyword);
     }
 }

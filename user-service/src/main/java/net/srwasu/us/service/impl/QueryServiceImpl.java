@@ -1,5 +1,7 @@
 package net.srwasu.us.service.impl;
 
+import cn.srwasu.commons.api.ApiRes;
+import cn.srwasu.commons.api.ResConst;
 import lombok.extern.slf4j.Slf4j;
 import net.srwasu.us.service.QueryService;
 import org.springframework.cache.annotation.CacheConfig;
@@ -18,14 +20,19 @@ import org.springframework.stereotype.Service;
 @Service
 @CacheConfig(cacheNames = {"query-res", "demo"})
 public class QueryServiceImpl implements QueryService {
+    /**
+     * 带缓存的service方法
+     * @param keyword 查询词
+     * @return 返回执行状态
+     */
     @Override
-    @Cacheable(unless = "#result.length() > 20")
-    public String query(String keyword) {
+    @Cacheable(unless = "#result.res.length() > 20")
+    public ApiRes<String> query(String keyword) {
         try {
             Thread.sleep(3000L);
-            return "result of " + keyword;
+            return ApiRes.ok("result of " + keyword);
         } catch (InterruptedException e) {
-            return null;
+            return ApiRes.fail(ResConst.INTERNAL_ERROR);
         }
     }
 }

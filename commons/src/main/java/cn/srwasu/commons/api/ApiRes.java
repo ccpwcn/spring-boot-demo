@@ -18,35 +18,36 @@ public class ApiRes<T> implements Serializable {
     private T res;
 
     private ApiRes() {
-        this(200, "ok");
+        this(ResConst.FORBIDDEN);
     }
 
-    private ApiRes(int code, String msg) {
-        this(code, msg, null);
+    private ApiRes(ResConst rc) {
+        this(rc, null);
     }
-    private ApiRes(int code, String msg, T res) {
-        this.code = code;
-        this.msg = msg;
+
+    private ApiRes(ResConst rc, T res) {
+        this.code = rc.code;
+        this.msg = rc.msg;
         this.res = res;
     }
 
     public static <T> ApiRes<T> ok() {
-        return ok(200, "ok", null);
+        return ok(ResConst.SUCCESS, null);
     }
 
     public static <T> ApiRes<T> ok(T t) {
-        return ok(200, "ok", t);
+        return ok(ResConst.SUCCESS, t);
     }
 
-    public static <T> ApiRes<T> ok(int code, String msg) {
-        return ok(code, msg, null);
+    public static <T> ApiRes<T> ok(ResConst rc) {
+        return ok(rc, null);
     }
 
-    public static <T> ApiRes<T> ok(int code, String msg, T res) {
-        return new ApiRes<>(code, msg, res);
+    public static <T> ApiRes<T> ok(ResConst rc, T res) {
+        return new ApiRes<>(rc, res);
     }
 
-    public static <T> ApiRes<T> fail(int code, String msg) {
-        return new ApiRes<>(code, msg);
+    public static <T> ApiRes<T> fail(ResConst rc) {
+        return new ApiRes<>(rc);
     }
 }

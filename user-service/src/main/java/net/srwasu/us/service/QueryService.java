@@ -1,5 +1,7 @@
 package net.srwasu.us.service;
 
+import cn.srwasu.commons.api.ApiRes;
+
 /**
  * <h3>查询服务接口</h3>
  * <p>查询服务</p>
@@ -14,5 +16,5 @@ public interface QueryService {
      * @param keyword 查询词
      * @return 返回查询数据，可能来自缓存，也可能不是
      */
-    String query(String keyword);
+    ApiRes<String> query(String keyword);
 }
