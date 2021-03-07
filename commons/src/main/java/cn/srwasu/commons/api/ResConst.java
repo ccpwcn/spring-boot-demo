@@ -13,6 +13,16 @@ public enum ResConst {
      * 未找到
      */
     NOT_FOUND(404, "未找到"),
+
+    /**
+     * 先决条件不满足
+     */
+    CONFLICT(409, "请求存在冲突"),
+
+    /**
+     * 先决条件不满足
+     */
+    PRECONDITION_FAIL(412, "先决条件不满足"),
     /**
      * 内部错误
      */

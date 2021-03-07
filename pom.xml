@@ -89,9 +89,16 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- 配置文件的处理器，配置文件进行绑定就会有提示-->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-configuration-processor</artifactId>
+        <optional>true</optional>
+        <version>${spring.boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
         <version>${spring.boot.version}</version>
       </dependency>
 
@@ -110,12 +117,6 @@
         <groupId>com.alibaba</groupId>
         <artifactId>druid-spring-boot-starter</artifactId>
         <version>${druid.version}</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
-      <dependency>
-        <groupId>redis.clients</groupId>
-        <artifactId>jedis</artifactId>
-        <version>${jedis.version}</version>
       </dependency>
       <!-- 其他附加配置 -->
       <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
