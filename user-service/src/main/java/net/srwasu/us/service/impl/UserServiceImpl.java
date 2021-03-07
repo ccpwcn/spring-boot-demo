@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
         } else {
             try {
                 if (lock.tryLock()) {
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
                     return ApiRes.ok();
                 } else {
                     return ApiRes.fail(ResConst.PRECONDITION_FAIL);

@@ -8,10 +8,7 @@ import net.srwasu.us.service.QueryService;
 import net.srwasu.us.service.UserService;
 import net.srwasu.us.vo.UserUpdateVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author lidawei
@@ -41,7 +38,7 @@ public class TestController {
     }
 
     @PostMapping("/updateById")
-    public ApiRes<Integer> updateById(UserUpdateVo vo) {
+    public ApiRes<Integer> updateById(@RequestBody UserUpdateVo vo) {
         log.info("updateById request param: {}", JSON.toJSONString(vo));
         return userService.updateById(vo);
     }
