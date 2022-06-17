@@ -37,7 +37,7 @@
     <mysql.java.version>8.0.21</mysql.java.version>
     <mybatis.plus.version>3.3.2</mybatis.plus.version>
     <druid.version>1.1.23</druid.version>
-    <alibaba.fastjson.version>1.2.72</alibaba.fastjson.version>
+    <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
     <jedis.version>3.2.0</jedis.version>
     <activiti.version>6.0.0</activiti.version>
     <redisson.version>3.14.0</redisson.version>
