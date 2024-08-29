@@ -40,7 +40,7 @@
     <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
     <jedis.version>3.2.0</jedis.version>
     <activiti.version>6.0.0</activiti.version>
-    <redisson.version>3.14.0</redisson.version>
+    <redisson.version>3.22.0</redisson.version>
   </properties>
 
   <!-- 依赖管理节点dependencyManagement只起声明作用，不会直接导入，具体的引用在子项目中使用dependency生效 -->
